@@ -1,13 +1,13 @@
 <launch>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find omo_r1_gazebo)/worlds/empty.world"/>
+<!--    <arg name="world_name" value="$(find omo_r1_gazebo)/worlds/empty.world"/>-->
+    <arg name="world_name" value="$(find omo_r1_gazebo)/worlds/static_map_plugin.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
-
   <include file="$(find omo_r1_gazebo)/launch/spawn_omo_r1_mod.launch">
   </include>
 </launch>
