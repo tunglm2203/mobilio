@@ -3,11 +3,15 @@
 <launch>
 
     <arg name="robot_namespace" default="/"/>
+    <arg name="init_latitude" default="36.37081389"/>
+    <arg name="init_longtitude" default="127.36651111"/>
 
     <group ns="$(arg robot_namespace)">
 
         <param name="robot_description"
-               command="$(find xacro)/xacro --inorder $(find omo_r1_gazebo)/sdf/custom_omo_r1.gazebo.xacro"/>
+               command="$(find xacro)/xacro --inorder $(find omo_r1_gazebo)/sdf/custom_omo_r1.gazebo.xacro
+                        init_latitude:=$(arg init_latitude) init_longtitude:=$(arg init_longtitude)"
+        />
 
         <!-- Load controller configuration -->
 <!--        <rosparam command="load" file="$(find husky_control)/config/control_mod.yaml"/>-->

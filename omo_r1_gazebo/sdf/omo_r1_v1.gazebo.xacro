@@ -4,6 +4,8 @@
   <xacro:arg name="laser_visual"  default="false"/>
   <xacro:arg name="camera_visual" default="false"/>
   <xacro:arg name="imu_visual"    default="false"/>
+  <xacro:arg name="init_latitude"  default="36.37081389" />
+  <xacro:arg name="init_longtitude"  default="127.36651111" />
 
   <gazebo reference="base_link">
     <material>Gazebo/DarkGrey</material>
@@ -152,12 +154,8 @@
       <frameId>base_link</frameId>
       <topicName>navsat/fix</topicName>
       <velocityTopicName>navsat/vel</velocityTopicName>
-<!--      <referenceLatitude>49.9</referenceLatitude>-->
-<!--      <referenceLongitude>8.9</referenceLongitude>-->
-<!--      <referenceLatitude>36.37081389</referenceLatitude>-->
-<!--      <referenceLongitude>127.36651111</referenceLongitude>-->
-      <referenceLatitude>36.370069</referenceLatitude>
-      <referenceLongitude>127.367833</referenceLongitude>
+      <referenceLatitude>$(arg init_latitude)</referenceLatitude>
+      <referenceLongitude>$(arg init_longtitude)</referenceLongitude>
       <referenceHeading>0</referenceHeading>
       <referenceAltitude>0</referenceAltitude>
       <drift>0.0001 0.0001 0.0001</drift>
